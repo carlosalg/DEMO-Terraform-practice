@@ -3,17 +3,6 @@ provider "aws" {
 }
 
 
-terraform {
-
-    backend "s3" {
-        bucket      = "bucket-carloslopez-terraform" # Crealo manualmente una vez
-        key         = "github-actions-demo/terraform.tfstate" # ruta dentro del bucket
-        region      = "us-east-2"
-        encrypt     = true 
-
-    }
-}
-
 resource "aws_s3_bucket" "web" {
     bucket = "carloslopez-githubactions-demo"
 
